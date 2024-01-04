@@ -1,0 +1,54 @@
+{
+    "books": [
+        {
+            "id": 0,
+            "title": "Harry Potter",
+            "author": "J.K.Rowling",
+            "category": "fiction",
+            "isbn": "3-078-62159-8",
+            "createdAt": "12 March 2022, 10:39AM",
+            "editedAt": "13 March 2023, 10:20AM",
+            "isActive": "true"
+        },
+        {
+            "id": 1,
+            "title": "Don Quixote",
+            "author": "Miguel de Cervantes",
+            "category": "fantasy",
+            "isbn": "6-032-59634-3",
+            "createdAt": "14 March 2020, 5:35AM",
+            "editedAt": "15 March 2023, 11:25AM",
+            "isActive": "true"
+        },
+        {
+            "id": 2,
+            "title": "Treasure Island",
+            "author": "Robert Louis Stevenson",
+            "category": "mistery",
+            "isbn": "2-076-86043-5",
+            "createdAt": "12 June 2022, 8:35AM",
+            "editedAt": "13 July 2023, 10:30AM",
+            "isActive": "true"
+        },
+        {
+            "id": 3,
+            "title": "Jane Eyre",
+            "author": "Charlotte Brontë",
+            "category": "horror",
+            "isbn": "0-061-96436-2",
+            "createdAt": "11 December 2022, 6:36AM",
+            "editedAt": "13 October 2023, 11:29AM",
+            "isActive": "true"
+        },
+        {
+            "id": 4,
+            "title": "Pride and Prejudice",
+            "author": "Jane Austen",
+            "category": "romance",
+            "isbn": "1-035-67584-0",
+            "createdAt": "11 April 2022, 2:36AM",
+            "editedAt": "13 March 2023, 11:45AM",
+            "isActive": "true"
+        }
+    ]
+}
