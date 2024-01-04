@@ -1,7 +1,11 @@
 <div class="alignment">{{ book.title }}</div>
 <div class="alignment">{{ book.author }}</div>
-<div class="buttonWrapper">
-  <button class="alignment">Edit</button>
-  <button class="alignment">ToggleActivity</button>
-  <button class="alignment">Delete</button>
+<div class="alignment">{{ book.category }}</div>
+<div class="alignment">{{ book.isbn }}</div>
+<div class="alignment">{{ book.createdAt }}</div>
+<div class="alignment">{{ book.editedAt }}</div>
+<div class="alignment buttonWrapper">
+  <button (click)="editAction()">Edit</button>
+  <button (click)="toggleStatusAction()">ToggleActivity</button>
+  <button (click)="deleteAction()">Delete</button>
 </div>

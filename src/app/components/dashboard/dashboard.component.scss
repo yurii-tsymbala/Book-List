@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.dataTypes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+span {
+    margin-right: 1rem;
+}
