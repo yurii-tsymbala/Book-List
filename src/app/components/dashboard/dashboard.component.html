@@ -1,1 +1,8 @@
 <p>dashboard works!</p>
+<book
+  *ngFor="let book of books$ | async"
+  [book]="book"
+  (editAction)="editBook()"
+  (toggleStatusAction)="toggleStatusBook()"
+  (deleteAction)="deleteBook()"
+></book>

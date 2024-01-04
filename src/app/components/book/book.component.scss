@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60rem;
+  height: 4rem;
+}
+
+.alignment {
+    margin-right: 1rem;
+}
+
+.buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
