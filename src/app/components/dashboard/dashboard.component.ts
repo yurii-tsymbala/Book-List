@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
     this.bookService.updateBookById(book).pipe(take(1)).subscribe();
   }
 
-  deleteAction() {
-    
+  deleteAction(book: Book) {
+    this.bookService.deleteBookById(book).pipe(take(1)).subscribe();
   }
 }

@@ -10,7 +10,7 @@ export class BookComponent {
   @Input() book!: Book;
   @Output() editBook = new EventEmitter<Number>();
   @Output() toggleBook = new EventEmitter<Book>();
-  @Output() deleteBook = new EventEmitter<Number>();
+  @Output() deleteBook = new EventEmitter<Book>();
 
   editAction(): void {
     this.editBook.emit(this.book.id);
@@ -22,6 +22,6 @@ export class BookComponent {
   }
 
   deleteAction(): void {
-    this.deleteBook.emit(this.book.id);
+    this.deleteBook.emit(this.book);
   }
 }
