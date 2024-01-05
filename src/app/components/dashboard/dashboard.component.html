@@ -11,6 +11,6 @@
   *ngFor="let book of books$ | async"
   [book]="book"
   (editBook)="editAction()"
-  (toggleStatusBook)="toggleStatusAction()"
+  (toggleBook)="toggleAction($event)"
   (deleteBook)="deleteAction()"
 ></book>

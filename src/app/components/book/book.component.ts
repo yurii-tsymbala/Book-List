@@ -9,7 +9,7 @@ import { Book } from 'src/app/shared/classes/Book';
 export class BookComponent {
   @Input() book!: Book;
   @Output() editBook = new EventEmitter<Number>();
-  @Output() toggleStatusBook = new EventEmitter<Number>();
+  @Output() toggleBook = new EventEmitter<Book>();
   @Output() deleteBook = new EventEmitter<Number>();
 
   editAction(): void {
@@ -17,7 +17,8 @@ export class BookComponent {
   }
 
   toggleStatusAction(): void {
-    this.toggleStatusBook.emit(this.book.id);
+    this.book.isActive = !this.book.isActive;
+    this.toggleBook.emit(this.book);
   }
 
   deleteAction(): void {

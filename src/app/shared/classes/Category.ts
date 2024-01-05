@@ -1,7 +1,7 @@
 export enum Category {
-  horror,
-  fantasy,
-  romance,
-  fiction,
-  mistery
+  horror = "Horror",
+  fantasy = "Fantasy",
+  romance = "Romance",
+  fiction = "Fiction",
+  mistery = "Mistery"
 }

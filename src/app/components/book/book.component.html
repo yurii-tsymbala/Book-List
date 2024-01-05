@@ -1,11 +1,14 @@
 <div class="alignment">{{ book.title }}</div>
 <div class="alignment">{{ book.author }}</div>
-<div class="alignment">{{ book.category }}</div>
+<div class="alignment">{{ book.category.toUpperCase() }}</div>
 <div class="alignment">{{ book.isbn }}</div>
 <div class="alignment">{{ book.createdAt }}</div>
 <div class="alignment">{{ book.editedAt }}</div>
 <div class="alignment buttonWrapper">
+  <label class="switch">
+    <input type="checkbox" [checked]="book.isActive" (change)="toggleStatusAction()">
+    <span class="slider"></span>
+  </label>
   <button (click)="editAction()">Edit</button>
-  <button (click)="toggleStatusAction()">ToggleActivity</button>
   <button (click)="deleteAction()">Delete</button>
 </div>

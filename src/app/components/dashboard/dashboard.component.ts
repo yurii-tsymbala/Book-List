@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { Book } from 'src/app/shared/classes/Book';
 import { BookService } from 'src/app/shared/services/book.service';
 
@@ -25,8 +25,8 @@ export class DashboardComponent implements OnInit {
     
   }
 
-  toggleStatusAction() {
-    
+  toggleAction(book: Book) {
+    this.bookService.updateBookById(book).pipe(take(1)).subscribe();
   }
 
   deleteAction() {

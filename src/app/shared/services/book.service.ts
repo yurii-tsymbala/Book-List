@@ -21,9 +21,21 @@ export class BookService {
     );
   }
 
-  addBook(data: Book): Observable<Book[]> {
+  addBook(book: Book): Observable<Book[]> {
     return this.http
-      .post<Book[]>(this.apiURL, data)
+      .post<Book[]>(this.apiURL, book)
+      .pipe(switchMap(() => this.getBooks()));
+  }
+
+  updateBookById(book: Book): Observable<Book[]> {
+    return this.http
+      .post<Book[]>(this.apiURL, book)
+      .pipe(switchMap(() => this.getBooks()));
+  }
+
+  deleteBookById(book: Book): Observable<Book[]> {
+    return this.http
+      .delete<Book[]>(`${this.apiURL}/${book.id}`)
       .pipe(switchMap(() => this.getBooks()));
   }
 
