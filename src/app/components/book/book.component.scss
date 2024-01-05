@@ -18,6 +18,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: calc(100vh / 4);
+}
+
+.input-disabled {
+ user-select: none;
+ cursor:not-allowed;
+ opacity: 70%;
+}
+
+.btnEdit {
+  color: black;
+  background-color: #ffc107;
+}
+
+.btnSave {
+  color: white;
+  background-color: #198754;
+}
+
+.btnDelete {
+  color: white;
+  background-color: #dc3545;
+}
+
+#addBtn {
+  color: white;
+  background-color: #0d6efd;
+}
+
+.btnDelete,
+.btnEdit,
+.btnSave,
+#addBtn {
+  display: block;
+  min-width: 2.8rem;
+  height: 34px;
+  font-weight: bolder;
+  margin-left: 0.2rem;
+  border: 1px solid #000000ab;
 }
 
 .switch {
@@ -43,8 +82,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -55,16 +94,16 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {

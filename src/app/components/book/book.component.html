@@ -4,11 +4,22 @@
 <div class="alignment">{{ book.isbn }}</div>
 <div class="alignment">{{ book.createdAt }}</div>
 <div class="alignment">{{ book.editedAt }}</div>
-<div class="alignment buttonWrapper">
+<div class="buttonWrapper">
   <label class="switch">
-    <input type="checkbox" [checked]="book.isActive" (change)="toggleStatusAction()">
+    <input
+      type="checkbox"
+      [checked]="book.isActive"
+      (change)="toggleStatusAction()"
+    />
     <span class="slider"></span>
   </label>
-  <button (click)="editAction()">Edit</button>
-  <button (click)="deleteAction()">Delete</button>
+  <button class="btnEdit" (click)="editAction()">Edit</button>
+  <button
+    class="btnDelete"
+    (click)="deleteAction()"
+    [disabled]="!book.isActive"
+    [ngClass]="{ 'input-disabled': !book.isActive}"
+  >
+    Delete
+  </button>
 </div>
