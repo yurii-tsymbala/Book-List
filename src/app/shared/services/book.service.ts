@@ -45,6 +45,7 @@ export class BookService {
   getBooksByStatus(isActive: Boolean): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiURL).pipe(
       tap((value) => {
+        this.allBooks$.next(value.length);
         this.books$.next(value.filter((book) => book.isActive == isActive));
       })
     );
