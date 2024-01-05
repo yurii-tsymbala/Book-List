@@ -1,0 +1,17 @@
+<div class="custom-select">
+  <select [(ngModel)]="selectedValue" (ngModelChange)="filterChanged()">
+    <option *ngFor="let value of values" [ngValue]="value">{{ value }}</option>
+  </select>
+</div>
+
+<div *ngIf="books$ | async; let books">
+  <p>
+    {{ books.length }}
+  </p>
+</div>
+
+<div *ngIf="allBooks$ | async; let allBooks">
+    <p>
+      {{ allBooks }}
+    </p>
+  </div>

@@ -15,6 +15,7 @@ export class AppComponent {
   }
 
   private getBooks(): void {
+    this.bookService.filterStatus.next("Show All");
     this.bookService.getBooks().pipe(take(1)).subscribe();
   }
 }

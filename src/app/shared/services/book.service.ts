@@ -9,14 +9,43 @@ import { HttpClient } from '@angular/common/http';
 export class BookService {
   private readonly apiURL = 'http://localhost:3000/books';
   private books$ = new BehaviorSubject<Book[]>([]);
+  private allBooks$ = new BehaviorSubject<number>(0);
   readonly updatedBooks$ = this.books$.asObservable();
+  readonly allBooksLength$ = this.allBooks$.asObservable();
+  filterStatus = new BehaviorSubject<string>('Show Active');
 
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
+    if (this.filterStatus.getValue() == 'Show All') {
+      return this.http.get<Book[]>(this.apiURL).pipe(
+        tap((value) => {
+          this.books$.next(value);
+          this.allBooks$.next(value.length);
+        })
+      );
+    }
+
+    if (this.filterStatus.getValue() == 'Show Active') {
+      return this.getBooksByStatus(true);
+    }
+
+    if (this.filterStatus.getValue() == 'Show Deactivated') {
+      return this.getBooksByStatus(false);
+    }
+
     return this.http.get<Book[]>(this.apiURL).pipe(
       tap((value) => {
         this.books$.next(value);
+        this.allBooks$.next(value.length);
+      })
+    );
+  }
+
+  getBooksByStatus(isActive: Boolean): Observable<Book[]> {
+    return this.http.get<Book[]>(this.apiURL).pipe(
+      tap((value) => {
+        this.books$.next(value.filter((book) => book.isActive == isActive));
       })
     );
   }

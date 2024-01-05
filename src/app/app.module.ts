@@ -8,13 +8,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { BookComponent } from './components/book/book.component';
 import { FormsModule } from '@angular/forms';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AddBookComponent,
-    BookComponent
+    BookComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
