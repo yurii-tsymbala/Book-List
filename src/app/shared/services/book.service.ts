@@ -29,7 +29,7 @@ export class BookService {
 
   updateBookById(book: Book): Observable<Book[]> {
     return this.http
-      .post<Book[]>(this.apiURL, book)
+      .put<Book[]>(`${this.apiURL}/${book.id}`, book)
       .pipe(switchMap(() => this.getBooks()));
   }
 
