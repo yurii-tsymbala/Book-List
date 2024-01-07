@@ -69,7 +69,7 @@ export class BookService {
       .pipe(switchMap(() => this.getBooks()));
   }
 
-  getBookById(id: string): Observable<Book> {
+  getBookById(id: number): Observable<Book> {
     return this.http.get<Book>(`${this.apiURL}/${id}`);
   }
 }

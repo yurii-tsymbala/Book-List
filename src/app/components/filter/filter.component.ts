@@ -22,6 +22,7 @@ export class FilterComponent implements OnInit {
   }
 
   private observeBooks(): void {
+    this.bookService.filterStatus.next("Show Active");
     this.books$ = this.bookService.updatedBooks$;
     this.allBooks$ = this.bookService.allBooksLength$;
   }

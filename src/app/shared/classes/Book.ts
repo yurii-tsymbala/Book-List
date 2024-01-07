@@ -5,7 +5,7 @@ export class Book {
     public id: number,
     public title: string,
     public author: string,
-    public category: Category,
+    public category: string,
     public isbn: string,
     public createdAt: string,
     public editedAt: string,

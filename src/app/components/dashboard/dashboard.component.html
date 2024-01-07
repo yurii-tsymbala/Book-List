@@ -1,3 +1,4 @@
+<button class="addBtn" routerLink="/add"> Add</button>
 <filter></filter>
 <div class="dataTypes">
   <span>Title</span>
@@ -11,7 +12,7 @@
 <book
   *ngFor="let book of books$ | async"
   [book]="book"
-  (editBook)="editAction()"
+  (editBook)="editAction($event)"
   (toggleBook)="toggleAction($event)"
   (deleteBook)="deleteAction($event)"
 ></book>

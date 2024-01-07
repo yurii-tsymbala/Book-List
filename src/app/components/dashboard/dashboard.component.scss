@@ -1,20 +1,35 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100vh;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
 }
 
 .dataTypes {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 span {
-    margin-right: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.addBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: block;
+  min-width: 2.8rem;
+  height: 34px;
+  font-weight: bolder;
+  margin-left: 0.2rem;
+  border: 1px solid #000000ab;
+  color: white;
+  background-color: green;
 }

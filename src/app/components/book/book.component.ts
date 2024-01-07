@@ -8,12 +8,12 @@ import { Book } from 'src/app/shared/classes/Book';
 })
 export class BookComponent {
   @Input() book!: Book;
-  @Output() editBook = new EventEmitter<Number>();
+  @Output() editBook = new EventEmitter<Book>();
   @Output() toggleBook = new EventEmitter<Book>();
   @Output() deleteBook = new EventEmitter<Book>();
 
   editAction(): void {
-    this.editBook.emit(this.book.id);
+    this.editBook.emit(this.book);
   }
 
   toggleStatusAction(): void {

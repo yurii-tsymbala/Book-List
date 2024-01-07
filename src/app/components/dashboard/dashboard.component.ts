@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, take } from 'rxjs';
 import { Book } from 'src/app/shared/classes/Book';
 import { BookService } from 'src/app/shared/services/book.service';
@@ -11,7 +12,7 @@ import { BookService } from 'src/app/shared/services/book.service';
 export class DashboardComponent implements OnInit {
   books$!: Observable<Book[]>;
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, public router: Router) {}
 
   ngOnInit(): void {
     this.observeBooks();
@@ -21,8 +22,10 @@ export class DashboardComponent implements OnInit {
     this.books$ = this.bookService.updatedBooks$;
   }
 
-  editAction() {
-    
+  editAction(book: Book) {
+    this.router.navigate(['/add/'], {
+      queryParams: { id: book.id },
+    });
   }
 
   toggleAction(book: Book) {
@@ -30,6 +33,13 @@ export class DashboardComponent implements OnInit {
   }
 
   deleteAction(book: Book) {
-    this.bookService.deleteBookById(book).pipe(take(1)).subscribe();
+    this.bookService
+      .deleteBookById(book)
+      .pipe(take(1))
+      .subscribe({
+        complete() {
+          alert('Successfully deleted the book');
+        },
+      });
   }
 }

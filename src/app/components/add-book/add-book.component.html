@@ -1,1 +1,25 @@
-<p>add-book works!</p>
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <h1>Add Book</h1>
+  <input placeholder="Title" formControlName="titleInput" />
+  <input placeholder="Author" formControlName="authorInput" />
+  <input placeholder="ISBN" formControlName="isbnInput" />
+  <select formControlName="categoryInput">
+    <option *ngFor="let value of values" [ngValue]="value">{{ value }}</option>
+  </select>
+  <div class="switchWrapper">
+    <span class="status">Activity Status</span>
+    <label class="switch">
+      <input
+        type="checkbox"
+        [checked]="true"
+        (change)="toggleStatusAction()" formControlName="isActiveInput"
+      />
+      <span class="slider"> </span>
+    </label>
+  </div>
+  <span class="error">{{errorInfo}}</span>
+  <div class="btnWrapper">
+    <button class="sbmtBtn" routerLink="/">Cancel</button>
+    <button class="sbmtBtn" type="submit">Save</button>
+  </div>
+</form>

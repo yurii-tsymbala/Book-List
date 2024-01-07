@@ -17,8 +17,8 @@
   <button
     class="btnDelete"
     (click)="deleteAction()"
-    [disabled]="!book.isActive"
-    [ngClass]="{ 'input-disabled': !book.isActive}"
+    [disabled]="book.isActive"
+    [ngClass]="{ 'input-disabled': book.isActive}"
   >
     Delete
   </button>

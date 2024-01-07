@@ -1,8 +1,74 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.switchWrapper {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sbmtBtn {
+  min-width: 2.8rem;
+  height: 34px;
+  font-weight: bolder;
+  margin-left: 0.2rem;
+  border: 1px solid #000000ab;
+  color: white;
+  background-color: green;
+}
+
+input {
+  width: 300px;
+  padding-left: 0.5rem;
+  padding-right: 0.2rem;
+  margin-bottom: 2rem;
+  font: inherit;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+select {
+  width: 300px;
+  font: inherit;
+  margin-bottom: 2rem;
+  border: 1px solid gray;
+}
+
+select option {
+  width: 300px;
+  font: inherit;
+}
+
+.error {
+  margin-top: 0.5rem;
+  max-width: 300px;
+  min-height: 50px;
+  text-align: center;
+  color: red;
+}
+
+.status {
+  margin-right: 1rem;
 }
