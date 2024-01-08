@@ -12,12 +12,12 @@ export class BookService {
   private allBooks$ = new BehaviorSubject<number>(0);
   readonly updatedBooks$ = this.books$.asObservable();
   readonly allBooksLength$ = this.allBooks$.asObservable();
-  filterStatus = new BehaviorSubject<string>('Show Active');
+  filterStatus = new BehaviorSubject<string>('Active');
 
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
-    if (this.filterStatus.getValue() == 'Show All') {
+    if (this.filterStatus.getValue() == 'All') {
       return this.http.get<Book[]>(this.apiURL).pipe(
         tap((value) => {
           this.books$.next(value);
@@ -26,11 +26,11 @@ export class BookService {
       );
     }
 
-    if (this.filterStatus.getValue() == 'Show Active') {
+    if (this.filterStatus.getValue() == 'Active') {
       return this.getBooksByStatus(true);
     }
 
-    if (this.filterStatus.getValue() == 'Show Deactivated') {
+    if (this.filterStatus.getValue() == 'Deactivated') {
       return this.getBooksByStatus(false);
     }
 

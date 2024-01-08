@@ -4,60 +4,53 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 4rem;
-  border: 1px solid black;
+  min-height: 4rem;
+  border: 1px solid rgb(0 0 0 / 21%);
   margin-top: 1rem;
+  background-color: white;
+  border-radius: 0.3rem;
+  opacity: 95%;
+}
+
+.title {
+  text-align: center;
+  width: calc(100% / 8);
 }
 
 .alignment {
   text-align: center;
-  margin-right: 1rem;
-  width: calc(100vh / 5);
+  width: calc(100% / 8);
 }
 
 .buttonWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100vh / 4);
+  width: calc(100% / 4);
+
+  :not(:last-child) {
+    margin-right: 0.4rem;
+  }
 }
 
-.input-disabled {
- user-select: none;
- cursor:not-allowed;
- opacity: 70%;
+@media (min-width: 320px) and (max-width: 480px) {
+  .alignment {
+    display: none;
+  }
+
+  .title {
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100%);
+
+    :not(:last-child) {
+      margin-right: 0.4rem;
+    }
+  }
 }
-
-.btnEdit {
-  color: black;
-  background-color: #ffc107;
-}
-
-.btnSave {
-  color: white;
-  background-color: #198754;
-}
-
-.btnDelete {
-  color: white;
-  background-color: #dc3545;
-}
-
-#addBtn {
-  color: white;
-  background-color: #0d6efd;
-}
-
-.btnDelete,
-.btnEdit,
-.btnSave,
-#addBtn {
-  display: block;
-  min-width: 2.8rem;
-  height: 34px;
-  font-weight: bolder;
-  margin-left: 0.2rem;
-  border: 1px solid #000000ab;
-}
-
-

@@ -1,18 +1,24 @@
-<button class="addBtn" routerLink="/add"> Add</button>
-<filter></filter>
-<div class="dataTypes">
-  <span>Title</span>
-  <span>Author</span>
-  <span>Category</span>
-  <span>ISBN</span>
-  <span>Created</span>
-  <span>Edited</span>
-  <span>Actions</span>
+<div class="contentWrapper">
+  <div class="controls">
+    <filter></filter>
+    <button class="btn btn-success" routerLink="/add">Add</button>
+  </div>
+  <div class="dataTypes">
+    <span>Title</span>
+    <span class="hide">Author</span>
+    <span class="hide">Category</span>
+    <span class="hide">ISBN</span>
+    <span class="hide">Created</span>
+    <span class="hide">Edited</span>
+    <span>Actions</span>
+  </div>
+
+  <book
+    *ngFor="let book of books$ | async"
+    [book]="book"
+    (editBook)="editAction($event)"
+    (toggleBook)="toggleAction($event)"
+    (deleteBook)="deleteAction($event)"
+  ></book>
 </div>
-<book
-  *ngFor="let book of books$ | async"
-  [book]="book"
-  (editBook)="editAction($event)"
-  (toggleBook)="toggleAction($event)"
-  (deleteBook)="deleteAction($event)"
-></book>
+<footer></footer>

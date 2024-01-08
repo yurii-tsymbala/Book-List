@@ -44,7 +44,9 @@ export class AddBookComponent implements OnInit {
         Validators.required,
         Validators.minLength(5),
       ]),
-      categoryInput: new FormControl('Horror'),
+      categoryInput: new FormControl('Horror',[
+        Validators.required,
+      ]),
       isbnInput: new FormControl('', [
         Validators.required,
         Validators.minLength(13),
@@ -53,7 +55,7 @@ export class AddBookComponent implements OnInit {
     });
   }
 
-  private configureData(): void {
+  private configureData(): void {  
     this.isEditMode = true;
     this.reactiveForm.controls['titleInput'].setValue(this.book.title);
     this.reactiveForm.controls['authorInput'].setValue(this.book.author);
@@ -63,7 +65,9 @@ export class AddBookComponent implements OnInit {
   }
 
   toggleStatusAction() {
-    this.reactiveForm.controls['isActiveInput'].setValue((this.reactiveForm.value.isActiveInput as boolean));
+    this.reactiveForm.controls['isActiveInput'].setValue(
+      this.reactiveForm.value.isActiveInput as boolean
+    );
   }
 
   onSubmit() {
@@ -84,7 +88,7 @@ export class AddBookComponent implements OnInit {
               categoryInput,
               isbnInput,
               this.book.createdAt,
-              '24 December 2023, 05:30PM', // need to take editedAt
+              Date.now(),
               isActiveInput
             )
           )
@@ -104,8 +108,8 @@ export class AddBookComponent implements OnInit {
               authorInput,
               categoryInput,
               isbnInput,
-              '22 September 2023, 12:00AM', // need to take createdAt
-              '--',
+              Date.now(),
+              -1,
               isActiveInput
             )
           )
@@ -118,8 +122,16 @@ export class AddBookComponent implements OnInit {
         this.router.navigate(['/']);
       }
     } else {
-      if (titleInput <= 2 || authorInput <= 5) {
-        this.errorInfo = 'Title or Author input data is too short. ';
+      if (titleInput <= 2) {
+        this.errorInfo = 'Title input is too short. ';
+      }
+      if (authorInput <= 5) {
+        this.errorInfo = 'Author input is too short. ';
+      }
+      if (titleInput <= 2 && authorInput <= 5) {
+        {
+          this.errorInfo = 'Title and Author inputs are too short. ';
+        }
       }
       this.isbnValidate();
     }

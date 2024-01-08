@@ -1,24 +1,24 @@
-<div class="alignment">{{ book.title }}</div>
+<div class="title">{{ book.title }}</div>
 <div class="alignment">{{ book.author }}</div>
-<div class="alignment">{{ book.category.toUpperCase() }}</div>
+<div class="alignment">{{ book.category }}</div>
 <div class="alignment">{{ book.isbn }}</div>
-<div class="alignment">{{ book.createdAt }}</div>
-<div class="alignment">{{ book.editedAt }}</div>
+<div class="alignment">{{ createdDateFormatted }}</div>
+<div class="alignment">{{ editedDateFormatted }}</div>
 <div class="buttonWrapper">
-  <label class="switch">
+  <label class="switch round">
     <input
       type="checkbox"
       [checked]="book.isActive"
       (change)="toggleStatusAction()"
     />
-    <span class="slider"></span>
+    <span class="slider round"></span>
   </label>
-  <button class="btnEdit" (click)="editAction()">Edit</button>
+
+  <button class="btn btn-success" (click)="editAction()">Edit</button>
   <button
-    class="btnDelete"
+    class="btn btn-danger"
     (click)="deleteAction()"
     [disabled]="book.isActive"
-    [ngClass]="{ 'input-disabled': book.isActive}"
   >
     Delete
   </button>

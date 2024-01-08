@@ -9,6 +9,7 @@ import { AddBookComponent } from './components/add-book/add-book.component';
 import { BookComponent } from './components/book/book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterComponent } from './components/filter/filter.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterComponent } from './components/filter/filter.component';
     DashboardComponent,
     AddBookComponent,
     BookComponent,
-    FilterComponent
+    FilterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

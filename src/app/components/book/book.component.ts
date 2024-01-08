@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from 'src/app/shared/classes/Book';
+import getFormattedDate from 'src/app/shared/utils/utils';
 
 @Component({
   selector: 'book',
@@ -14,6 +15,14 @@ export class BookComponent {
 
   editAction(): void {
     this.editBook.emit(this.book);
+  }
+
+  get createdDateFormatted(): string {
+    return getFormattedDate(this.book.createdAt);
+  }
+
+  get editedDateFormatted(): string {
+    return getFormattedDate(this.book.editedAt);
   }
 
   toggleStatusAction(): void {
